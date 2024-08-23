@@ -1,0 +1,50 @@
+name: Remove Pipeline & Application
+
+on:
+  create:
+    branches:
+      - destroy
+
+jobs:
+  destory-resources:
+    if: github.ref == 'refs/heads/destroy'
+    runs-on: ubuntu-20.04
+    steps:
+        
+        - uses: actions/checkout@v1
+        - name: Create artifact
+          run: cd ./project && ls && cd ../..
+        - id: set_pipeline
+          run: |
+            content=`cat ./pipeline.json`
+            # the following lines are only required for multi line json
+            content="${content//'%'/'%25'}"
+            content="${content//$'\n'/'%0A'}"
+            content="${content//$'\r'/'%0D'}"
+            # end of optional handling for multi line json
+            echo "::set-output name=pipeline::$content"
+        - run: |
+            echo "${{fromJson(steps.set_pipeline.outputs.pipeline).pipeline.name}}"
+        - id: set_application
+          run: |
+            content=`cat ./application.json`
+            # the following lines are only required for multi line json
+            content="${content//'%'/'%25'}"
+            content="${content//$'\n'/'%0A'}"
+            content="${content//$'\r'/'%0D'}"
+            # end of optional handling for multi line json
+            echo "::set-output name=application::$content"
+        - run: |
+            echo "${{fromJson(steps.set_application.outputs.application).applicationName}}"
+        - name: Destroy pipeline
+          run: aws codepipeline delete-pipeline --name ${{fromJson(steps.set_pipeline.outputs.pipeline).pipeline.name}}
+          env:
+            # AWS_S3_BUCKET: 'designs-dev-pipeline-artifacts'
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        - name: Destory application
+          run: aws deploy delete-application --application-name ${{fromJson(steps.set_application.outputs.application).applicationName}}
+          env:
+            # AWS_S3_BUCKET: 'designs-dev-pipeline-artifacts'
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

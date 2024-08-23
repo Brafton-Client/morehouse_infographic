@@ -1,0 +1,7 @@
+.sass-cache
+node_modules
+log
+/assets/original/*
+/assets/compress/*
+!/assets/original/.gitkeep
+!/assets/compress/.gitkeep

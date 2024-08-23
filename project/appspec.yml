@@ -1,0 +1,8 @@
+version: 0.0
+os: linux
+files:
+    - source: /
+      destination: /var/www/html/morehouse_infographic
+hooks:
+    BeforeInstall:
+    - location: scripts/before.sh

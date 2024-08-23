@@ -1,0 +1,40 @@
+{
+	"name": "morehouse_infographic",
+	"version": "1.0.0",
+	"description": "Base For building new Wordpress sites for Brafton",
+	"main": "index.js",
+	"client": "morehouse",
+	"organization": "",
+	"orgId": "841091536",
+	"project": "infographic",
+	"projectId": "1076320044",
+	"devDependencies": {
+		"colors": "^1.4.0",
+		"openurl": "^1.1.1",
+		"prompt": "1.0.0",
+		"replace-in-file": "^6.2.0",
+		"rimraf": "^2.6.2",
+		"run-git-command": "1.0.1"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"new-project": "node ./scripts/local/new_setup.js",
+		"setup": "node ./scripts/local/existing_setup.js",
+		"compress": "node compress.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/brafton-client/basebuild.git"
+	},
+	"author": "Deryk W. King",
+	"license": "ISC",
+	"homepage": "https://github.com/brafton-client/basebuild#readme",
+	"dependencies": {
+		"compress-images": "^1.9.2",
+		"gifsicle": "^5.1.0",
+		"pngquant-bin": "^6.0.0",
+		"simple-git": "^2.37.0",
+		"update-json-file": "^1.1.1"
+	},
+	"projectGUID": "2b1ef964-2c5b-43ac-b50e-79e703d128af"
+}

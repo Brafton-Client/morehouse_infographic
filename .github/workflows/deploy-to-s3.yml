@@ -1,0 +1,40 @@
+name: Build and Deploy to hosted Assets
+
+on:
+    push:
+        branches:
+            - develop
+
+jobs:
+  Deploy-to-Hosted-Assets-s3:
+    runs-on: ubuntu-20.04
+    steps:
+        - name: Checkout repo and submodules
+          uses: actions/checkout@v2
+          with:
+            submodules: recursive
+        - name: Create artifact
+          run: cd ./project && zip -r project.zip .
+        - uses: actions/upload-artifact@v2
+          with:
+            name: site
+            path: ./project
+            retention-days: 1
+        - name: JSON to variables
+          uses: antifree/json-to-variables@v1.0.1
+          with:
+            filename: 'package.json'
+            prefix: hosted
+        - name: deploy to s3
+          uses: jakejarvis/s3-sync-action@master
+          with:
+            args: --acl public-read --follow-symlinks --delete
+          env:
+            AWS_S3_BUCKET: 'hosted-assets-dev'
+            AWS_ACCESS_KEY_ID: ${{ secrets.HOSTED_DEV_AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.HOSTED_DEV_AWS_SECRET_ACCESS_KEY }}
+            AWS_REGION: us-east-1
+            SOURCE_DIR: project
+            DEST_DIR: "${{env.hosted_client}}-${{env.hosted_orgId}}/${{env.hosted_project}}-${{env.hosted_projectId}}/"
+        - name: Display Url 
+          run: echo "## Public Url - https://hosted-assets.dev.tech.brafton.com/${{env.hosted_client}}-${{env.hosted_orgId}}/${{env.hosted_project}}-${{env.hosted_projectId}}/index.html" >> $GITHUB_STEP_SUMMARY
