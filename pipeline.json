@@ -45,7 +45,7 @@
                         },
                         "outputArtifacts": [],
                         "configuration": {
-                            "ApplicationName": "morehouse_infographic-designs-dev-site",
+                            "ApplicationName": "Morehouse_Infographic-designs-dev-site",
                             "DeploymentGroupName": "designs-dev-site"
                         },
                         "runOrder": 1
@@ -57,7 +57,7 @@
             "type": "S3",
             "location": "designs-dev-pipeline-artifacts"
         },
-        "name": "morehouse_infographic-designs-dev-pipeline",
+        "name": "Morehouse_Infographic-designs-dev-pipeline",
         "version": 1
     }
 }

@@ -1,12 +1,12 @@
 {
-	"name": "morehouse_infographic",
+	"name": "Morehouse_Infographic",
 	"version": "1.0.0",
 	"description": "Base For building new Wordpress sites for Brafton",
 	"main": "index.js",
-	"client": "morehouse",
+	"client": "Morehouse",
 	"organization": "",
 	"orgId": "841091536",
-	"project": "infographic",
+	"project": "Infographic",
 	"projectId": "1076320044",
 	"devDependencies": {
 		"colors": "^1.4.0",

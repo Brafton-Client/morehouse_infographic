@@ -1,5 +1,5 @@
 {
-    "applicationName": "morehouse_infographic-designs-dev-site",
+    "applicationName": "Morehouse_Infographic-designs-dev-site",
     "deploymentConfigName": "CodeDeployDefault.OneAtATime",
     "ec2TagFilters": [
         {
