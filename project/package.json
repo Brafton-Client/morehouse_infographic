@@ -2,11 +2,11 @@
     "name": "morehouse_infographic",
     "version": "1.0.0",
     "description": "standalone project",
-    "main": "index.js",
+    "main": "index.html",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "sass-watch": "sass --watch --update --style=compressed assets/scss/style.scss:assets/css/style.min.css",
-        "sass-compile": "sass --no-source-map --style=compressed assets/scss:assets/css"
+        "sass-watch": "sass --watch --update --style=compressed assets/scss:assets/css",
+        "sass-compile": "sass --no-source-map --style=compressed assets/scss/style.scss:assets/css/style.min.css"
     },
     "author": "Rene Peter <rene.peter@brafton.com>",
     "license": "ISC",
