@@ -644,10 +644,7 @@
             (function () {
                 let index = 0;
                 const infog = document.querySelector(".tn157-infographic");
-                console.log(infog);
                 const slides = infog.querySelectorAll(".slide");
-                console.log(slides);
-                console.log("index: " + index);
 
                 function transitionSlide(oldIndex, fadeIn = true) {
                     const old = slides[oldIndex];
@@ -682,7 +679,6 @@
                         console.log("next clicked");
                         if (index + 1 < slides.length) {
                             index = index + 1;
-                            console.log("index: " + index);
                             transitionSlide(index - 1);
                         } else {
                             resetSlides();
@@ -694,7 +690,6 @@
                     btn.addEventListener("click", function () {
                         if (index - 1 >= 0) {
                             index = index - 1;
-                            console.log("index: " + index);
                             transitionSlide(index + 1, false);
                         }
                     });
