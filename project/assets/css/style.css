@@ -88,6 +88,7 @@ h6 {
   width: 100%;
   overflow: hidden;
   border-bottom: 21px solid var(--color-burgandy);
+  font-family: "din-2014", sans-serif;
 }
 .tn157-infographic .slide {
   position: absolute;
@@ -148,6 +149,7 @@ h6 {
   border: 1px solid rgba(255, 255, 255, 0.77);
   border-radius: 6px;
   color: var(--color-white);
+  font-family: inherit;
   font-size: 21px;
   line-height: 1.85;
   font-weight: 700;
@@ -195,6 +197,7 @@ h6 {
   color: var(--color-white);
   border: 1px solid var(--color-white);
   border-radius: 8px;
+  font-family: inherit;
   font-size: 28px;
   line-height: 1.4;
   font-weight: 700;
@@ -207,6 +210,18 @@ h6 {
 }
 .tn157-infographic .slide.slide--intro main {
   align-items: center;
+}
+.tn157-infographic .slide.slide--intro main .logo-box {
+  position: relative;
+}
+.tn157-infographic .slide.slide--intro main .logo-box .suffix-text {
+  position: absolute;
+  bottom: -9px;
+  right: 0;
+  font-size: 33px;
+  line-height: 1.18;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 .tn157-infographic .slide:last-child main {
   margin-bottom: 160px;
