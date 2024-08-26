@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Morehouse - The Next 157 Years</title>
 
+        <link rel="stylesheet" href="https://use.typekit.net/pbk2kgm.css" />
         <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     </head>
     <body>
@@ -18,6 +19,7 @@
                         <div class="content-box">
                             <div class="logo-box">
                                 <img src="assets/images/morehouse_logo--lg.svg" alt="Morehouse" width="438.86" height="auto" />
+                                <span class="suffix-text">| The Next 157</span>
                             </div>
                             <div class="nav">
                                 <button type="button" class="start-btn" data-next>
@@ -676,7 +678,6 @@
 
                 infog.querySelectorAll("button[data-next]").forEach((btn) => {
                     btn.addEventListener("click", function () {
-                        console.log("next clicked");
                         if (index + 1 < slides.length) {
                             index = index + 1;
                             transitionSlide(index - 1);
