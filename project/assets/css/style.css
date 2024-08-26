@@ -174,12 +174,12 @@ h6 {
 }
 .tn157-infographic .slide main .content .content-box {
   border: 1px solid var(--color-white);
-  padding: 48px;
-  font-size: 28px;
+  padding: clamp(1.25rem, 0.128rem + 4.487vw, 3rem);
+  font-size: clamp(1.25rem, 0.929rem + 1.282vw, 1.75rem);
   line-height: 1.35;
 }
 .tn157-infographic .slide main .content .content-box h3 {
-  font-size: 36px;
+  font-size: clamp(1.75rem, 1.429rem + 1.282vw, 2.25rem);
   line-height: 1.08;
   margin: 0 0 14px;
 }
@@ -187,7 +187,7 @@ h6 {
   margin: 0;
 }
 .tn157-infographic .slide main .content .content-box .large-text {
-  font-size: 42px;
+  font-size: clamp(2rem, 1.599rem + 1.603vw, 2.625rem);
   line-height: 0.9;
   font-weight: 800;
 }
