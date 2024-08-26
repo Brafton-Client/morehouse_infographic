@@ -187,15 +187,20 @@ h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   background-color: transparent;
   color: var(--color-white);
   border: 1px solid var(--color-white);
   border-radius: 8px;
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 700;
   padding: 11px 30px 11px 22px;
   width: 145px;
   height: 58px;
   margin-left: 111px;
   margin-top: 38px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
